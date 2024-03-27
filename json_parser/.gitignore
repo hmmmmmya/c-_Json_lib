@@ -1,0 +1,8 @@
+*.o
+
+# Visual Studio / Visual Studio Code
+/.vs/
+/.vscode/
+
+src/json_parser
+src/*.json

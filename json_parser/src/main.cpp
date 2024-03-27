@@ -5,12 +5,6 @@
 
 using json = nlohmann::json;
 
-
-
-
-
-
-
 int main(){
     // create json object
     json j; // 首先创建一个空的json对象
@@ -21,8 +15,8 @@ int main(){
     j["answer"]["everything"] = 42; // 初始化answer对象
     j["list"] = { 1, 0, 2 }; // 使用列表初始化的方法对"list"数组初始化
     j["object"] = { {"currency", "USD"}, {"value", 42.99} }; // 初始化object对象
-
-
+    j["sex"] = "man";
+    j["age"] = 18;
 
     // 读取json对象
     float pi = j.at("pi");
@@ -37,7 +31,8 @@ int main(){
     // 打印"object"对象中的元素
     std::cout << j.at("object").at("currency") << std::endl; // 输出: USD
     std::cout << j.at("object").at("value") << std::endl; // 输出: 42.99
-
+    std::cout << j.at("sex") << std::endl;
+    std::cout << j.at("age") << std::endl;
 
     // write to json file
     std::ofstream file("pretty.json");
@@ -54,11 +49,6 @@ int main(){
     std::cout << pi2 << std::endl; // 输出: 3.141
     std::cout << name2 << std::endl; // 输出: Niels
     std::cout << everything2 << std::endl; // 输出: 42  
-
-
-
-
-
 
     return 0;
 }
