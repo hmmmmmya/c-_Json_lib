@@ -27,7 +27,9 @@ int main(){
     std::cout << everything << std::endl; // 输出: 42
     // 打印"list"数组
     for(int i=0; i<3; i++)
-    std::cout << j.at("list").at(i) << std::endl;
+    {
+        std::cout << j.at("list").at(i) << std::endl; // 也可以用j["list"].at("i")
+    }
     // 打印"object"对象中的元素
     std::cout << j.at("object").at("currency") << std::endl; // 输出: USD
     std::cout << j.at("object").at("value") << std::endl; // 输出: 42.99
@@ -49,6 +51,10 @@ int main(){
     std::cout << pi2 << std::endl; // 输出: 3.141
     std::cout << name2 << std::endl; // 输出: Niels
     std::cout << everything2 << std::endl; // 输出: 42  
+
+    // 序列化：从 JSON 对象转化为字节序列
+    std::string s = j2.dump();
+    std::cout << "dump: " << s << std::endl;
 
     return 0;
 }
